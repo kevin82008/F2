@@ -21,6 +21,7 @@ export interface ChartProps {
   px2hd?: any;
   theme?: any;
   style?: any;
+  el? string;
   createImage?: () => HTMLImageElement;
   /**
    * 是否横屏
@@ -75,6 +76,7 @@ class Canvas extends Component<ChartProps> {
       style: customStyle,
       createImage,
       landscape,
+      el
     } = props;
 
     const px2hd = isFunction(customPx2hd) ? batch2hd(customPx2hd) : defaultPx2hd;
@@ -89,6 +91,7 @@ class Canvas extends Component<ChartProps> {
       height,
       createImage,
       landscape,
+      el
     });
 
     // 组件更新器
